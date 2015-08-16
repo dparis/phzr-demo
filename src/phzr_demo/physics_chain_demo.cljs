@@ -52,8 +52,6 @@
               (pset! (get-in cur-link [:body :velocity]) :x 400)
               (pset! (:body cur-link) :mass (/ length n))))
 
-
-          ;; Some kind of problem happening in recursion
           (recur (inc n) cur-link))))))
 
 (defn ^:private create
