@@ -61,7 +61,7 @@
   (let [gof  (:add game)
         phys (:physics game)]
     (pgof/tile-sprite gof 0 0 800 600 "clouds")
-    (pp/start-system phys (:p2-js phys))
+    (pp/start-system phys (pp/const :p2-js))
     (pset! (get-in phys [:p2 :gravity]) :y 1200)
     (create-rope game 40 400 64)))
 
