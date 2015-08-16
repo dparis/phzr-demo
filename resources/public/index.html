@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
+    <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <div id="app">
-      <h2>Figwheel template</h2>
-      <p>Checkout your developer console.</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" type="text/css" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link href="css/zenburn.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+
+<body>
+    <div id="layout">
+        <!-- Menu toggle -->
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+        <div id="menu">
+            <div class="pure-menu"><a class="pure-menu-heading" href="#">Demos</a>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="#" id="animation-btn" class="pure-menu-link">Animation</a></li>
+                    <li class="pure-menu-item"><a href="#" id="physics-chain-btn" class="pure-menu-link">Physics Chain</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="header">
+                <h1>PHZR DEMO</h1>
+                <h2>Click on the demos to the left to see phzr in action</h2>
+            </div>
+            <div class="content pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div id="demo-container">
+                        <div id="phzr-demo">
+                        </div>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                  <pre><code class="clojure" id="code-display"></code></pre>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="js/compiled/phzr_demo.js" type="text/javascript"></script>
-  </body>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript">
+    </script>
+    <script src="js/ui.js" type="text/javascript">
+    </script>
+    <script src="js/highlight.js" type="text/javascript">
+    </script>
+    <script src="js/compiled/phzr_demo.js" type="text/javascript">
+    </script>
+</body>
+
 </html>
