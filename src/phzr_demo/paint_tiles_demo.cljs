@@ -90,17 +90,17 @@
   [cursors game]
   (cond
     (get-in @cursors [:left :is-down])
-    (pset! (:camera game) :x (- (:camera game) 4))
+    (pset! (:camera game) :x (- (get-in game [:camera :x]) 4))
 
     (get-in @cursors [:right :is-down])
-    (pset! (:camera game) :x (+ (:camera game) 4)))
+    (pset! (:camera game) :x (+ (get-in game [:camera :x]) 4)))
 
   (cond
     (get-in @cursors [:up :is-down])
-    (pset! (:camera game) :y (- (:camera game) 4))
+    (pset! (:camera game) :y (- (get-in game [:camera :y]) 4))
 
     (get-in @cursors [:down :is-down])
-    (pset! (:camera game) :y (+ (:camera game) 4))))
+    (pset! (:camera game) :y (+ (get-in game [:camera :y]) 4))))
 
 (defn ^:private build-update-fn
   [current-tile cursors layer marker tmap]
