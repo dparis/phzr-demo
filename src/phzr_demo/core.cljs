@@ -2,6 +2,7 @@
     (:require [dommy.core :as d]
               [phzr.game :as pg]
               [phzr-demo.animation-demo :as pad]
+              [phzr-demo.paint-tiles-demo :as ptd]
               [phzr-demo.physics-chain-demo :as pcd])
     (:require-macros [dommy.core :as d]
                      [phzr-demo.macros :refer [slurp]]))
@@ -35,6 +36,17 @@
   (reset! demo (pad/start-demo demo-div-id))
   (reset-code-display! animation-code))
 
+(def ^:private paint-tiles-code
+  (slurp "src/phzr_demo/paint_tiles_demo.cljs"))
+
+(defn ^:private start-paint-tiles-demo!
+  []
+  (println "Starting paint tiles demo")
+  (when-let [cur-demo @demo]
+    (pg/destroy cur-demo))
+  (reset! demo (ptd/start-demo demo-div-id))
+  (reset-code-display! paint-tiles-code))
+
 (def ^:private physics-chain-code
   (slurp "src/phzr_demo/physics_chain_demo.cljs"))
 
@@ -49,6 +61,7 @@
 (defn ^:private init-buttons!
   []
   (d/listen! (d/sel1 :#animation-btn) :click start-animation-demo!)
+  (d/listen! (d/sel1 :#paint-tiles-btn) :click start-paint-tiles-demo!)
   (d/listen! (d/sel1 :#physics-chain-btn) :click start-physics-chain-demo!))
 
 (defn ^:private init-page!
