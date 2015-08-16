@@ -1,11 +1,10 @@
 (ns ^:figwheel-always phzr-demo.core
-    (:require [domina :as d]
-              [domina.css :as dc]
-              [domina.events :as de]
+    (:require [dommy.core :as d]
               [phzr.game :as pg]
               [phzr-demo.animation-demo :as pad]
               [phzr-demo.physics-chain-demo :as pcd])
-    (:require-macros [phzr-demo.macros :refer [slurp]]))
+    (:require-macros [dommy.core :as d]
+                     [phzr-demo.macros :refer [slurp]]))
 
 
 (enable-console-print!)
@@ -21,7 +20,7 @@
 
 (defn ^:private reset-code-display!
   [code]
-  (let [code-node (d/by-id "code-display")]
+  (let [code-node (d/sel1 :#code-display)]
     (d/set-text! code-node code)
     (.highlightBlock js/hljs code-node)))
 
@@ -49,8 +48,8 @@
 
 (defn ^:private init-buttons!
   []
-  (de/listen! (d/by-id "animation-btn") :click start-animation-demo!)
-  (de/listen! (d/by-id "physics-chain-btn") :click start-physics-chain-demo!))
+  (d/listen! (d/sel1 :#animation-btn) :click start-animation-demo!)
+  (d/listen! (d/sel1 :#physics-chain-btn) :click start-physics-chain-demo!))
 
 (defn ^:private init-page!
   []
