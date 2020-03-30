@@ -4,14 +4,19 @@
   :license {:name "MIT License"
             :url "http://opensource.org/licenses/MIT"}
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.48"]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/clojurescript "1.10.520"]
+                 [org.clojure/core.async "1.0.567"]
                  [prismatic/dommy "1.1.0"]
-                 [phzr "0.1.0-SNAPSHOT"]]
+                 [phzr "0.1.0-SNAPSHOT"]
 
-  :plugins [[lein-cljsbuild "1.0.5"]
-            [lein-figwheel "0.3.5"]]
+                 ; uncomment if needed:
+;                 [javax.xml.bind/jaxb-api "2.3.1"]
+;                 [org.glassfish.jaxb/jaxb-runtime "2.3.1"]
+                 ]
+
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-figwheel "0.5.19"]]
 
   :source-paths ["src"]
 
